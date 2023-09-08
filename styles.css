@@ -1,0 +1,19 @@
+table {
+    border: 2px solid #0F2C59;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    background-color: #F8F0E5;
+    margin: auto;
+    width: 25rem;
+    height: 30rem;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.UserName {
+    font-weight: bold;
+}
+
