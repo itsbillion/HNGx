@@ -9,6 +9,10 @@ table {
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+}
+
 .UserName {
     font-weight: bold;
 }
