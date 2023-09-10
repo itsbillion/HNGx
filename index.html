@@ -121,8 +121,10 @@
         document.querySelector(".day").innerHTML = listOfDays[day];
         document.querySelector(".time").innerHTML = currentTime;
       }
-      getCurrentTime();
-      setInterval(getCurrentTime, 1000);
+      window.onload = function() {
+          getCurrentTime();
+          setInterval(getCurrentTime, 1000);
+      }
     </script>
 </head>
 <body>
