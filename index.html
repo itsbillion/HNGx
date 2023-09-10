@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Peters-Okonkwo HNGx Stage 1</title>
+    <style>
+          body {
+            background-color: #A2C579;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+          }
+
+          .container {
+              max-width: 550px;
+              display: flex;
+              overflow: hidden;
+              border: 1px solid transparent;
+              border-radius: 10px;
+          }
+
+          .image {
+              flex: 1;
+              height: inherit;
+          }
+
+          .image img {
+              height: 100%;
+              max-width: 100%;
+          }
+
+          .info {
+              flex: 1;
+              height: inherit;
+              padding: 20px;
+              background-color: #FFFFDD;
+              box-sizing: border-box;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              align-items: center;
+              font-family: "Montserrat", serif;
+              color: #016A70;
+          }
+
+          .UserName {
+              font-size: 1.5rem;
+              font-weight: bold;
+              line-height: 0.05rem;
+          }
+
+          .track {
+              font-weight: normal;
+              font-size: 1rem;
+          }
+
+          a {
+              text-decoration: none;
+              text-align: center;
+              font-size: 1rem;
+              border: 1px solid transparent;
+              color: #FFFFDD;
+              font-family: "Montserrat", serif;
+              background-color: #016A70;
+              width: 10rem;
+              border-radius: 5px;
+              padding: 1rem;
+              transition: ease-in-out 0.35s all;
+          }
+          a:hover {
+              background-color: #173127;
+              cursor: pointer;
+          }
+
+          @media only screen and (min-width: 2000px) {
+              :root {
+                  --font-size-base: 50px;
+              }
+          }
+          @media only screen and (max-width: 490px) {
+              .container {
+                  max-width: 300px;
+                  display: flex;
+                  flex-direction: column;
+                  overflow: hidden;
+                  border: 1px solid transparent;
+                  border-radius: 10px;
+                  margin: 0;
+                  padding: 0;
+              }
+              .image {
+                  margin-bottom: -5px;
+              }
+              .image img {
+                  max-height: 250px;
+                  width: 100%;
+                  object-fit: cover;
+                  margin-bottom: -1px;
+              }
+              .info {
+                  align-items: flex-start;
+              }
+              a {
+                  text-wrap: nowrap;
+              }
+          }
+    </style>
+    <script>
+      function getCurrentTime() {
+        var today = new Date(); 
+        var day = today.getDay();
+        var listOfDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        var hours = today.getUTCHours().toString().padStart(2, '0');
+        var minutes = today.getUTCMinutes().toString().padStart(2, '0');
+        var seconds = today.getUTCSeconds().toString().padStart(2, '0');
+        var currentTime = hours + ":" + minutes + ":" + seconds;
+        document.querySelector(".day").innerHTML = listOfDays[day];
+        document.querySelector(".time").innerHTML = currentTime;
+      }
+      getCurrentTime();
+      setInterval(getCurrentTime, 1000);
+    </script>
+</head>
+<body>
+    <section class="main">
+        <div class="container">
+            <div class="image"><img data-testid="slackDisplayImage" src="https://ca.slack-edge.com/T05FFAA91JP-U05QY7PEHAT-e818ad86f4a0-512" alt="itsBillion"></div>
+            <div class="info">
+                <p data-testid="slackUserName" class="UserName">itsBillion</p>
+
+                <p data-testid="currentDayOfTheWeek">Today is <span class="day"></span></p>
+
+                <p data-testid="currentUTCTime"><span class="time"></span></p>
+
+                <p data-testid="myTrack" class="track">Front-End Development Track</p>
+
+                <a data-testid=“githubURL” href="https://github.com/itsbillion/HNGx" target="_blank">Source Code Here</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
